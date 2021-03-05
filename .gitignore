@@ -1,0 +1,8 @@
+    #JETBRAINS
+.idea/
+.out/
+out/
+*.puml
+
+    #MAC
+*.DS_Store
