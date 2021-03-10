@@ -21,4 +21,32 @@ document.addEventListener('init', function(event) {
       });
     }
   }
+
+  ons.ready(function() {
+    var pullHook = document.getElementById('pull-hook');
+
+    pullHook.addEventListener('changestate', function(event) {
+      var message = '';
+
+      switch (event.state) {
+        case 'initial':
+          message = 'Tirer pour rafraîchir';
+          break;
+        case 'preaction':
+          message = 'Lacher';
+          break;
+        case 'action':
+          message = 'Chargement...';
+          break;
+      }
+
+      pullHook.innerHTML = message;
+    });
+
+    pullHook.onAction = function(done) {
+      setTimeout(done, 1000);
+    };
+  });
+
 });
+

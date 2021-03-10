@@ -11,7 +11,8 @@
     <script src="js/controllers.js"></script>
     <script src="js/services.js"></script>
     <script>
-        ons.platform.select('android');
+        if (Math.random()*2 >= 1) ons.platform.select('android');
+        else ons.platform.select('ios other');
     </script>
     <link rel="stylesheet" href="lib/onsen/css/onsenui.css">
     <link rel="stylesheet" href="lib/onsen/css/onsen-css-components.css">
@@ -67,11 +68,14 @@
             <ons-tabbar id="myTabbar" position="auto">
                 <ons-tab page="html/pending_tasks.html" label="En attente" active>
                 </ons-tab>
+                <ons-tab page="html/important_tasks.html" label="Importantes">
+                </ons-tab>
                 <ons-tab page="html/completed_tasks.html" label="Finies">
                 </ons-tab>
             </ons-tabbar>
         </ons-page>
     </template>
+
 
 </body>
 
