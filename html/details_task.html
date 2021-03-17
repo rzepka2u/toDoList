@@ -2,36 +2,36 @@
 <!--TODO-->
 
     <ons-toolbar>
-        <div class="left"><ons-back-button>Back</ons-back-button></div>
-        <div class="center">Task Details</div>
+        <div class="left"><ons-back-button>Retour menu</ons-back-button></div>
+        <div class="center">Détails et édition de la tâche</div>
         <div class="right">
             <ons-toolbar-button component="button/save-task">
                 <ons-if platform="android">
                     <ons-icon icon="md-save"></ons-icon>
                 </ons-if>
                 <ons-if platform="ios other">
-                    Save
+                    Enregistrer
                 </ons-if>
             </ons-toolbar-button>
         </div>
     </ons-toolbar>
 
-    <ons-list-title>Modify your task</ons-list-title>
+    <ons-list-title>Modifier la tâche</ons-list-title>
     <ons-list>
         <ons-list-item modifier="nodivider">
             <ons-if platform="ios other" class="left left-label">
-                Title
+                Titre
             </ons-if>
             <div class="center">
-                <ons-input id="title-input" type="text" placeholder="I want to..." float></ons-input>
+                <ons-input id="title-input" type="text" placeholder="Tâche" float></ons-input>
             </div>
         </ons-list-item>
         <ons-list-item modifier="nodivider">
             <ons-if platform="ios other" class="left left-label">
-                Category
+                Categorie
             </ons-if>
             <div class="center">
-                <ons-input id="category-input" type="text" placeholder="Category" float></ons-input>
+                <ons-input id="category-input" type="text" placeholder="Categorie" float></ons-input>
             </div>
         </ons-list-item>
         <ons-list-item modifier="nodivider">
@@ -44,11 +44,11 @@
         </ons-list-item>
     </ons-list>
 
-    <ons-list-title>Other options</ons-list-title>
+    <ons-list-title>Autres options</ons-list-title>
     <ons-list>
         <ons-list-item modifier="nodivider">
             <label class="center" for="inner-highlight-input">
-                Highlight?
+                Activer surlignement
             </label>
             <div class="right">
                 <ons-switch id="highlight-input" input-id="inner-highlight-input"></ons-switch>
@@ -56,12 +56,22 @@
         </ons-list-item>
         <ons-list-item modifier="nodivider">
             <label class="center" for="inner-urgent-input">
-                Is it urgent?
+                Mode urgent
             </label>
             <div class="right">
-                <ons-switch id="urgent-input" input-id="inner-urgent-input" disabled></ons-switch>
+                <ons-switch id="urgent-input" input-id="inner-urgent-input"></ons-switch>
             </div>
         </ons-list-item>
+
+        <ons-list-item modifier="nodivider">
+            <label class="center" for="inner-encours-input">
+                En cours ?
+            </label>
+            <div class="right">
+                <ons-switch id="encours-input" input-id="inner-encours-input"></ons-switch>
+            </div>
+        </ons-list-item>
+
     </ons-list>
 
 </ons-page>
