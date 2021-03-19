@@ -70,9 +70,18 @@ myApp.services = {
         taskItem.classList.add('urgent');
       }
 
+      if (taskItem.data.encours) {
+        taskItem.classList.add('encours');
+      }
+
       // Insert urgent tasks at the top and non urgent tasks at the bottom.
       var pendingList = document.querySelector('#pending-list');
       pendingList.insertBefore(taskItem, taskItem.data.urgent ? pendingList.firstChild : null);
+
+      ////// NE FONCTIONNE PAS TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO
+      //var encoursList = document.querySelector('#encours-list');
+      //if (taskItem.data.encours) document.querySelector(encoursList).appendChild(taskItem);
+
     },
 
     // Modifies the inner data and current view of an existing task.
@@ -98,6 +107,9 @@ myApp.services = {
       // Add or remove the urgent.
       taskItem.classList[data.urgent ? 'add' : 'remove']('urgent');
 
+      taskItem.classList[data.encours ? 'add' : 'remove']('encours');
+
+
       // Store the new data within the element.
       taskItem.data = data;
     },
@@ -111,6 +123,7 @@ myApp.services = {
         taskItem.remove();
         // Check if the category has no items and remove it in that case.
         myApp.services.categories.updateRemove(taskItem.data.category);
+        localStorage.removeItem(taskItem.data.title);
       });
     }
 
@@ -228,6 +241,7 @@ myApp.services = {
     }
   },
 
+  /*
   ////////////////////////
   // Initial Data Service //
   ////////////////////////
@@ -289,4 +303,5 @@ myApp.services = {
       urgent: false
     }
   ]
+  */
 };

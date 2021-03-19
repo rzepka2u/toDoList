@@ -16,12 +16,17 @@ document.addEventListener('init', function(event) {
       && document.querySelector('#pendingTasksPage')
       && !document.querySelector('#pendingTasksPage ons-list-item')
     ) {
-      myApp.services.fixtures.forEach(function (data) {
+      Object.keys(localStorage).forEach(function (key) {
+        let data = JSON.parse(localStorage.getItem(key));
         myApp.services.tasks.create(data);
       });
+
+      //myApp.services.fixtures.forEach(function (data) {
+      //  myApp.services.tasks.create(data);
+      //});
     }
   }
-
+/*
   ons.ready(function() {
     var pullHook = document.getElementById('pull-hook');
 
@@ -46,7 +51,7 @@ document.addEventListener('init', function(event) {
     pullHook.onAction = function(done) {
       setTimeout(done, 1000);
     };
-  });
+  });*/
 
 });
 
